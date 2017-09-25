@@ -1,2 +1,2 @@
 # Tutorial
-Tutorial documents.
+教程文档，均为原创。分享无罪，欢迎下载。
