@@ -2,7 +2,7 @@
 ## 环境
 - 操作系统：Ubuntu
 - 系统版本：16.04.3 LTS
-- Hadoop版本：2.8.1（安装请参考[Ubuntu16.04环境下安装配置Hadoop2.8.1集群](https://github.com/hemajun815/tutorial/blob/master/apache/1.installing-hadoop2.8.1-on-ubuntu.md)）
+- Hadoop版本：2.8.1（安装请参考[Ubuntu16.04环境下安装配置Hadoop2.8.1集群](https://github.com/hemajun815/tutorial/blob/master/apache/installing-hadoop2.8.1-on-ubuntu.md)）
 ## 简介
 Hadoop Streaming提供了一个便于进行MapReduce编程的工具包，使用它可以基于一些可执行命令、脚本语言或其他编程语言来实现Mapper和Reducer，从而充分利用Hadoop并行计算框架的优势和能力，来处理大数据。它提供了一种非常灵活的编程接口，是一种常用的非Java API编写MapReduce的工具。
 ## 原理
