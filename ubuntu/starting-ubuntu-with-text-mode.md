@@ -2,7 +2,7 @@
 ## 环境
 - 操作系统：Ubuntu
 - 系统版本：16.04.3 LTS
-- 用户权限：root（启用root用户可参考[这里](https://github.com/hemajun815/tutorial/blob/master/ubuntu/2.opening-root-on-ubuntu.md)进行操作）
+- 用户权限：root（启用root用户可参考[这里](https://github.com/hemajun815/tutorial/blob/master/ubuntu/opening-root-on-ubuntu.md)进行操作）
 ## 准备工作
 - 使用命令`apt install vim`安装好vim软件。
 ## 步骤
