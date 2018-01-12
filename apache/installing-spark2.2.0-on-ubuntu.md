@@ -1,6 +1,6 @@
 # Ubuntu16.04环境下Spark-2.2.0的安装和部署
 ## 前言
-在此之前，已经完成了[Ubuntu16.04环境下安装配置Hadoop2.8.1集群](https://github.com/hemajun815/tutorial/blob/master/apache/1.installing-hadoop2.8.1-on-ubuntu.md)和[Ubuntu16.04环境下Scala-2.11.7的安装与配置](https://github.com/hemajun815/tutorial/blob/master/apache/2.installing-scala2.11.7-on-ubuntu.md)。
+在此之前，已经完成了[Ubuntu16.04环境下安装配置Hadoop2.8.1集群](https://github.com/hemajun815/tutorial/blob/master/apache/installing-hadoop2.8.1-on-ubuntu.md)和[Ubuntu16.04环境下Scala-2.11.7的安装与配置](https://github.com/hemajun815/tutorial/blob/master/apache/installing-scala2.11.7-on-ubuntu.md)。
 ## 设备配置
 - 系统：Ubuntu
 - 版本：16.04
