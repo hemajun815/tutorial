@@ -39,5 +39,5 @@
 	```console
 	$ sudo apt autoremove
 	```
-8. [启用root用户](https://github.com/hemajun815/tutorial/blob/master/ubuntu/2.opening-root-on-ubuntu.md)
-9. [配置pip使用国内源](https://github.com/hemajun815/tutorial/blob/master/pip/1.configuring-pip-to-use-domestic-source.md)
+8. [启用root用户](https://github.com/hemajun815/tutorial/blob/master/ubuntu/opening-root-on-ubuntu.md)
+9. [配置pip使用国内源](https://github.com/hemajun815/tutorial/blob/master/pip/configuring-pip-to-use-domestic-source.md)
