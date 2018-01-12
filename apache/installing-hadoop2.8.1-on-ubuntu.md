@@ -11,7 +11,7 @@
 - 内存：2.0GB
 - 类型：64位操作系统 64位处理器
 ## 安装说明
-- 本次安装皆是在root用户下进行操作。可参照[opening-root-on-ubuntu](https://github.com/hemajun815/tutorial/blob/master/ubuntu/2.opening-root-on-ubuntu.md)启用root用户。
+- 本次安装皆是在root用户下进行操作。可参照[opening-root-on-ubuntu](https://github.com/hemajun815/tutorial/blob/master/ubuntu/opening-root-on-ubuntu.md)启用root用户。
 ## 软件下载
 1. jdk-8u131-linux-x64.tar.gz [百度网盘](https://pan.baidu.com/s/1c25ywcK)
 2. hadoop-2.8.1.tar.gz [百度网盘](https://pan.baidu.com/s/1c1C9MgC)
@@ -39,7 +39,7 @@ SSH之所以能够保证安全，原因在于它采用了公钥加密。过程�
 2. 用户使用这个公钥，将登录密码加密后，发送回来；
 3. 远程主机用自己的私钥，解密登录密码，如果密码正确，就同意用户登录。
 #### 安装
-在三台主机上，均输入`apt-get install openssh-server`命令安装ssh服务。安装完成后，由于ssh默认不允许root用户登录，可参考[ssh-with-root](https://github.com/hemajun815/tutorial/blob/master/ubuntu/3.ssh-with-root.md)允许root用户连接。
+在三台主机上，均输入`apt-get install openssh-server`命令安装ssh服务。安装完成后，由于ssh默认不允许root用户登录，可参考[ssh-with-root](https://github.com/hemajun815/tutorial/blob/master/ubuntu/ssh-with-root.md)允许root用户连接。
 ### 配置ssh服务
 #### 说明
 Hadoop运行过程中需要管理远端Hadoop守护进程，在Hadoop启动以后，NameNode是通过SSH（Secure Shell）来启动和停止各个DataNode上的各种守护进程的。这就必须在节点之间执行指令的时候是不需要输入密码的形式，故我们需要配置SSH运用无密码公钥认证的形式，这样NameNode使用SSH无密码登录并启动DataName进程，同样原理，DataNode上也能使用SSH无密码登录到 NameNode。
