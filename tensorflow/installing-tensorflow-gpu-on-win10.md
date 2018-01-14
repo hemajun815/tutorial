@@ -36,7 +36,7 @@ pip install tensorflow-gpu
 #### 安装cuDNN
 1. 从[NVIDIA官网](https://developer.nvidia.com/cudnn)下载cuDNN6.0压缩包（因下载时需要登录，故在此不提供官网下载链接）；
 2. 解压cuDNN6.0压缩包；
-3. 将解压后得到的路径添加到系统环境变量PATH中。
+3. 将解压后得到的`bin`文件夹路径添加到系统环境变量PATH中。
 ## 验证安装
 1. 打开Command Prompt启动python：
 ```console
