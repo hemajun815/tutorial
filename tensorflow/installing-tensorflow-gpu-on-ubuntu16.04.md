@@ -10,7 +10,7 @@
 * 显卡支持CUDA；
 * 稳定的网络连接。
 ## 说明
-* 本次安装的所有操作均是在root账户下执行的。可参照[opening-root-on-ubuntu](../ubuntu/opening-root-on-ubuntu.md)启用root用户。
+* 本次安装的所有操作均是在root账户下执行的。可参照[opening-root-on-ubuntu](../ubuntu/opening-root-on-ubuntu.md)启用root用户。若是要在非root账户下执行，请注意修改命令中的路径。
 ## 软件下载
 * CUDA8.0：[官网下载](http://developer2.download.nvidia.com/compute/cuda/8.0/secure/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb)， [百度网盘下载](https://pan.baidu.com/s/1c1BTZW0)；
 * cuDNN6.0：[百度网盘下载](https://pan.baidu.com/s/1o78RO6m)；
@@ -55,7 +55,7 @@
   $ tar -zxvf ./cudnn-8.0-linux-x64-v6.0.tgz -C $CUDA_HOME/../
   ```
 ### 安装Tensorflow-GPU
-1. 安装pip：`apt install pip`
+1. 安装pip：`apt install python-pip`
 2. 国内用户请参照[configuring-pip-to-use-domestic-source](https://github.com/hemajun815/tutorial/blob/master/pip/1.configuring-pip-to-use-domestic-source.md)将pip配置成使用国内源，可大幅度提升安装时的下载速度；
 3. 更新pip：`pip install -U pip`
 4. 安装tensorlfow-gpu：`pip install tensorflow-gpu`
