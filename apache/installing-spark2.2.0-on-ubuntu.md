@@ -1,6 +1,6 @@
 # Ubuntu16.04环境下Spark-2.2.0的安装和部署
 ## 前言
-在此之前，已经完成了[Ubuntu16.04环境下安装配置Hadoop2.8.1集群](https://github.com/hemajun815/tutorial/blob/master/apache/installing-hadoop2.8.1-on-ubuntu.md)和[Ubuntu16.04环境下Scala-2.11.7的安装与配置](https://github.com/hemajun815/tutorial/blob/master/apache/installing-scala2.11.7-on-ubuntu.md)。
+在此之前，已经完成了[Ubuntu16.04环境下安装配置Hadoop2.8.1集群](./installing-hadoop2.8.1-on-ubuntu.md)和[Ubuntu16.04环境下Scala-2.11.7的安装与配置](./installing-scala2.11.7-on-ubuntu.md)。
 ## 设备配置
 - 系统：Ubuntu
 - 版本：16.04
@@ -23,21 +23,21 @@
 ## 部署
 1. 进入spark根目录：`cd $SPARK_HOME`；
 2. 使用命令`cp conf/spark-env.sh.template conf/spark-env.sh`复制文件，并配置新复制的文件，`vim conf/spark-env.sh`，内容如下：
-	```text
-	export JAVA_HOME=/usr/local/jdk				#Java根目录
-	export SCALA_HOME=/usr/local/scala			#Scala根目录
-	export HADOOP_HOME=/usr/local/hadoop			#Hadoop根目录
-	export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop	#Hadoop集群配置文件的目录 
-	export SPARK_MASTER_IP=Master				#Spark集群的Master节点的地址
-	export SPARK_WORKER_MEMORY=2g				#每个Worker节点能够最大分配给exectors的内存大小 
-	export SPARK_WORKER_CORES=2				#每个Worker节点所占有的CPU核数目
-	export SPARK_WORKER_INSTANCES=1				#每台机器上开启的Worker节点的数目
-	```
+  ```text
+  export JAVA_HOME=/usr/local/jdk				#Java根目录
+  export SCALA_HOME=/usr/local/scala			#Scala根目录
+  export HADOOP_HOME=/usr/local/hadoop			#Hadoop根目录
+  export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop	#Hadoop集群配置文件的目录 
+  export SPARK_MASTER_IP=Master				#Spark集群的Master节点的地址
+  export SPARK_WORKER_MEMORY=2g				#每个Worker节点能够最大分配给exectors的内存大小 
+  export SPARK_WORKER_CORES=2				#每个Worker节点所占有的CPU核数目
+  export SPARK_WORKER_INSTANCES=1				#每台机器上开启的Worker节点的数目
+  ```
 3. 使用命令`cp conf/slaves.template conf/slaves`复制文件，并配置新复制的文件，`vim conf/slaves`，内容如下：
-	```text
-	Slave1
-	Slave2
-	```
+  ```text
+  Slave1
+  Slave2
+  ```
 4. 同步文件到Slave1：`rsync -av /usr/local/spark/ Slave1:/usr/local/spark/`；
 5. 同步文件到Slave2：`rsync -av /usr/local/spark/ Slave2:/usr/local/spark/`；
 ## 启动

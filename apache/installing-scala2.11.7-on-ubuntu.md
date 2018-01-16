@@ -1,6 +1,6 @@
 # Ubuntu16.04环境下Scala-2.11.7的安装与配置
 ## 前言
-Spark提供了对Scala语言的支持。在此，选择scala-2.11.7版本进行安装与配置。在此之前，已经完成了[Ubuntu16.04环境下安装配置Hadoop2.8.1集群](https://github.com/hemajun815/tutorial/blob/master/apache/installing-hadoop2.8.1-on-ubuntu.md)。
+Spark提供了对Scala语言的支持。在此，选择scala-2.11.7版本进行安装与配置。在此之前，已经完成了[Ubuntu16.04环境下安装配置Hadoop2.8.1集群](./installing-hadoop2.8.1-on-ubuntu.md)。
 ## 设备配置
 - 系统：Ubuntu
 - 版本：16.04
@@ -21,10 +21,10 @@ Spark提供了对Scala语言的支持。在此，选择scala-2.11.7版本进行�
 2. 解压文件：`tar -zxvf scala-2.11.7.tgz -C /usr/local/`；
 3. 重命名文件：`mv /usr/local/scala-2.11.7 /usr/local/scala`；
 4. 配置环境变量：`vim ~/.bashrc`，添加内容如下：
-	```text
-	export SCALA_HOME=/usr/local/scala
-	export PATH=$PATH:$SCALA_HOME/bin
-	```
+  ```text
+  export SCALA_HOME=/usr/local/scala
+  export PATH=$PATH:$SCALA_HOME/bin
+  ```
 5. 使变量生效：`source ~/.bashrc`；
 6. 查看版本号，以验证安装成功：`scala -version`；
 7. 同步文件到Slave1：`rsync -av /usr/local/scala/ Slave1:/usr/local/scala/`；

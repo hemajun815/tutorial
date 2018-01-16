@@ -3,7 +3,7 @@
 - 操作系统：Ubuntu
 - 系统版本：16.04.3 LTS
 ## 前言
-启用root用户请依照[这里](https://github.com/hemajun815/tutorial/blob/master/ubuntu/2.opening-root-on-ubuntu.md)进行操作。
+启用root用户请依照[教程：启用Ubuntu16.04系统的root用户](./opening-root-on-ubuntu.md)进行操作。
 ## 准备工作
 - 使用命令`sudo apt install openssh-server`安装好ssh服务。
 - 使用命令`sudo apt install vim`安装好vim软件。

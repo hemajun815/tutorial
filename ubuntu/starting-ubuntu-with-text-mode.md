@@ -2,7 +2,7 @@
 ## 环境
 - 操作系统：Ubuntu
 - 系统版本：16.04.3 LTS
-- 用户权限：root（启用root用户可参考[这里](https://github.com/hemajun815/tutorial/blob/master/ubuntu/opening-root-on-ubuntu.md)进行操作）
+- 用户权限：root（启用root用户可参考[启用Ubuntu16.04系统的root用户](./opening-root-on-ubuntu.md)进行操作）
 ## 准备工作
 - 使用命令`apt install vim`安装好vim软件。
 ## 步骤
@@ -16,6 +16,6 @@
 ## 附fix
 - **问题**：【20171005】以上方式对新版本Ubuntu无效。
 - **解决方案**：
-	- 终端执行命令`systemctl set-default multi-user.target`默认启动到命令行界面。
-	- 终端执行命令`systemctl set-default graphical.target`默认启动到图形界面。
-	- 命令行节目启动图形界面执行命令`systemctl start lightdm`。
+  - 终端执行命令`systemctl set-default multi-user.target`默认启动到命令行界面。
+  - 终端执行命令`systemctl set-default graphical.target`默认启动到图形界面。
+  - 命令行节目启动图形界面执行命令`systemctl start lightdm`。
