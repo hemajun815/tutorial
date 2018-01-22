@@ -33,6 +33,12 @@ original tutorials, share innocent, download free.
 
 - [配置pip使用国内源](./pip/configuring-pip-to-use-domestic-source.md)
 
+### qt
+
+**pyqt5**
+
+- [Ubuntu16.04环境下基于python2.7安装pyqt5](./qt/pyqt5/installing-pyqt5-with-python2-on-ubuntu.md)
+
 ### sql
 
 - [删除数据库数据，清理自增字段](./sql/clean-data-source.md)
