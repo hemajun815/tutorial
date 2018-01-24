@@ -39,4 +39,18 @@
 4. 配置：`python configure.py --qmake ${QtHome}/5.9.3/gcc_64/bin/qmake`（其中请把`${QtHome}`替换为Qt的安装目录）
 5. 编译：`make -j10`
 6. 安装：`sudo make install`
-7. 至此PyQt5安装完成，测试实例如下：
+7. 至此PyQt5安装完成。
+
+### 测试实例
+
+```python
+from PyQt5 import QtWidgets
+import sys
+    app = QtWidgets.QApplication(sys.argv)
+    first_window = QtWidgets.QWidget()
+    first_window.resize(400, 300)
+    first_window.setWindowTitle("我的第一个程序")
+    first_window.show()
+    sys.exit(app.exec_())
+```
+
