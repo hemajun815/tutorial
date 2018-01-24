@@ -34,19 +34,12 @@
 ### 安装PyQt5
 
 1. 下载软件：`wget https://ncu.dl.sourceforge.net/project/pyqt/PyQt5/PyQt-5.9.2/PyQt5_gpl-5.9.2.tar.gz`
-
 2. 解压安装包：`tar -zxvf PyQt5_gpl-5.9.2.tar.gz -C .`
-
 3. 进入安装包：`cd PyQt5`
-
 4. 配置：`python configure.py --qmake ${QtHome}/5.9.3/gcc_64/bin/qmake`（其中请把`${QtHome}`替换为Qt的安装目录）
-
 5. 编译：`make -j10`
-
 6. 安装：`sudo make install`
-
 7. 至此PyQt5安装完成，测试实例如下：
-
    ```python
    # -*- coding: utf-8 -*-
    from PyQt5 import QtWidgets
