@@ -18,7 +18,7 @@
 
 1. 下载软件：`wget http://download.qt.io/archive/qt/5.9/5.9.3/qt-opensource-linux-x64-5.9.3.run`
 2. 添加执行权限：`chmod +x qt-opensource-linux-x64-5.9.3.run`
-3. 启动安装器：`sudo bash qt-opensource-linux-x64-5.9.3.run`
+3. 启动安装器：`sudo qt-opensource-linux-x64-5.9.3.run`
 4. 此时，会弹出图形界面安装器，跟随提示一步一步安装完毕。
 
 ### 安装SIP
