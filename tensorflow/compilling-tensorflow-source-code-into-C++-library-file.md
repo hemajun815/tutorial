@@ -43,7 +43,8 @@
 
 1. 从GitHub上下载TensorFlow源码：`git clone --recursive https://github.com/tensorflow/tensorflow`
 2. 进入TensorFlow根目录：`cd tensorflow`
-3. 使用Bazel编译C++ API的库：`bazel build //tensorflow:libtensorflow_cc.so`
+3. 配置TensorFlow：`./configure`
+4. 使用Bazel编译C++ API的库：`bazel build //tensorflow:libtensorflow_cc.so`
 
 
 ### 安装TensorFlow C++库
