@@ -32,6 +32,8 @@
 6. 检查环境：`make check`
 7. 编译：`make -j8`
 8. 安装：`sudo make install`
+9. 添加环境变量：`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib`
+10. 查看版本以验证安装：`protoc --version`
 
 ### 安装Eigen
 
