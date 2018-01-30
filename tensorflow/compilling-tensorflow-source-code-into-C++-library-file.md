@@ -28,3 +28,29 @@
 
 ### 编译TensorFlow
 
+1. 从GitHub上下载TensorFlow源码：`git clone --recursive https://github.com/tensorflow/tensorflow`
+2. 进入TensorFlow根目录：`cd tensorflow`
+3. 使用Bazel编译C++ API的库：`bazel build //tensorflow:libtensorflow_cc.so`
+
+
+### 安装TensorFlow C++库
+
+1. 建立TensorFlow库文件夹：`sudo mkdir /usr/local/tensorflow`
+
+2. 复制include文件：
+
+   ```
+   sudo mkdir /usr/local/tensorflow/include
+   sudo cp -r bazel-genfiles/ /usr/local/tensorflow/include/
+   sudo cp -r tensorflow /usr/local/tensorflow/include/
+   sudo cp -r third_party /usr/local/tensorflow/include/
+   ```
+
+3. 复制lib文件：
+
+   ```
+   sudo mkdir /usr/local/tensorflow/lib
+   sudo cp -r bazel-bin/tensorflow/libtensorflow_cc.so /usr/local/tensorflow/lib/
+   ```
+
+
