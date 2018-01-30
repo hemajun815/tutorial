@@ -6,3 +6,4 @@
 - [TensorFlow多机部署](./multi-tensorflow.md)
 - [Distributed TensorFlow (Supervisor) 实践](./distributed-tensorflow-by-supervisor.md)
 - [TensorFlow分布式训练（MonitoredTrainingSession）](./distributed-tensorflow-by-monitoredtrainingsession.md)
+- [将Tensorflow源码编译成C++库文件](./compilling-tensorflow-source-code-into-C++-library-file.md)

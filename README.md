@@ -49,6 +49,7 @@ original tutorials, share innocent, download free.
 - [TensorFlow多机部署](./tensorflow/multi-tensorflow.md)
 - [Distributed TensorFlow (Supervisor) 实践](./tensorflow/distributed-tensorflow-by-supervisor.md)
 - [TensorFlow分布式训练（MonitoredTrainingSession）](./tensorflow/distributed-tensorflow-by-monitoredtrainingsession.md)
+- [将Tensorflow源码编译成C++库文件](./tensorflow/compilling-tensorflow-source-code-into-C++-library-file.md)
 
 ### ubuntu
 
