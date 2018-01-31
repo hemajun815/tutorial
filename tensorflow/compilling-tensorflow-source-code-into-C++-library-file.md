@@ -11,7 +11,10 @@
 
 ## 步骤
 
-这里提供两种安装方式，**[方式一](#方式一)**自动安装第三方依赖，步骤简单，自动从Github下载，速度较慢。**方式二**手动安装第三方依赖，步骤详尽，手动下载安装，速度较快。
+这里提供两种安装方式：
+
+- [方式一](#方式一)自动安装第三方依赖，步骤简单，自动从Github下载，速度较慢。
+- [方式二](#方式二)手动安装第三方依赖，步骤详尽，手动下载安装，速度较快。
 
 ### 方式一
 
@@ -34,7 +37,26 @@
 
 1. 从GitHub上下载TensorFlow源码：`git clone --recursive https://github.com/tensorflow/tensorflow`
 2. 进入目录：`cd tensorflow/contrib/makefile`
-3. 执行文件：``
+3. 执行文件：`./build_all_linux.sh`
+
+#### 编译TensorFlow
+
+1. 进入TensorFlow根目录：`cd tensorflow`
+2. 配置TensorFlow：`./configure`
+3. 使用Bazel编译C++ API的库：`bazel build //tensorflow:libtensorflow_cc.so`
+
+#### 安装
+
+```
+cd /usr/bin/
+sudo mkdir tensorflow
+sudo mkdir tensorflow/include
+
+sudo mkdir tensorflow/lib
+sudo cp ${TensorFlowCodeRoot}/bazel-bin/tensorflow/libtensorflow_*.so tensorflow/lib
+```
+
+---
 
 ### 方式二
 
@@ -77,7 +99,7 @@
 4. 使用Bazel编译C++ API的库：`bazel build //tensorflow:libtensorflow_cc.so`
 
 
-### 安装TensorFlow C++库
+#### 安装
 
 1. 建立TensorFlow库文件夹：`sudo mkdir /usr/local/tensorflow`
 2. 复制include文件：
@@ -92,3 +114,5 @@
    sudo mkdir /usr/local/tensorflow/lib
    sudo cp -r bazel-bin/tensorflow/libtensorflow_cc.so /usr/local/tensorflow/lib/
    ```
+
+---
