@@ -11,18 +11,48 @@
 
 ## 步骤
 
-### 安装Bazel
+这里提供两种安装方式，**[方式一](#方式一)**自动安装第三方依赖，步骤简单，自动从Github下载，速度较慢。**方式二**手动安装第三方依赖，步骤详尽，手动下载安装，速度较快。
+
+### 方式一
+
+#### 安装Bazel
 
 1. 安装JDK8：`sudo apt install openjdk-8-jdk`
+
+2. 添加Bazel分发源地址：
+
+   ```
+   echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+   curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
+   ```
+
+3. 安装Bazel：`sudo apt update && sudo apt install bazel`
+
+4. 更新Bazel：`sudo apt upgrade bazel`
+
+#### 配置第三方依赖
+
+1. 从GitHub上下载TensorFlow源码：`git clone --recursive https://github.com/tensorflow/tensorflow`
+2. 进入目录：`cd tensorflow/contrib/makefile`
+3. 执行文件：``
+
+### 方式二
+
+#### 安装Bazel
+
+1. 安装JDK8：`sudo apt install openjdk-8-jdk`
+
 2. 添加Bazel分发源地址：
    ```
    echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
    curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
    ```
+
 3. 安装Bazel：`sudo apt update && sudo apt install bazel`
+
 4. 更新Bazel：`sudo apt upgrade bazel`
 
-### 安装Protobuf
+#### 安装Protobuf
 
 1. 安装automake和libtool：`sudo apt install automake libtool`
 2. 从GitHub上下载Protobuf源码：`git clone https://github.com/google/protobuf.git`
@@ -35,11 +65,11 @@
 9. 添加环境变量：`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib`
 10. 查看版本以验证安装：`protoc --version`
 
-### 安装Eigen
+#### 安装Eigen
 
 1. `sudo apt install libeigen3-dev`
 
-### 编译TensorFlow
+#### 编译TensorFlow
 
 1. 从GitHub上下载TensorFlow源码：`git clone --recursive https://github.com/tensorflow/tensorflow`
 2. 进入TensorFlow根目录：`cd tensorflow`
