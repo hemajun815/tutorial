@@ -47,13 +47,32 @@
 
 #### 安装
 
-```
-cd /usr/bin/
-sudo mkdir tensorflow
-sudo mkdir tensorflow/include
+1. 建立文件夹
 
-sudo mkdir tensorflow/lib
-sudo cp ${TensorFlowCodeRoot}/bazel-bin/tensorflow/libtensorflow_*.so tensorflow/lib
+```
+sudo mkdir /usr/local/tensorflow
+```
+
+2. 拷贝头文件
+
+```
+sudo mkdir /usr/local/tensorflow/include
+sudo cp -r tensorflow/contrib/makefile/downloads/eigen/Eigen /usr/local/tensorflow/include/
+sudo cp -r tensorflow/contrib/makefile/downloads/eigen/unsupported /usr/local/tensorflow/include/
+sudo cp -r tensorflow/contrib/makefile/gen/protobuf/include/google /usr/local/tensorflow/include/
+sudo cp tensorflow/contrib/makefile/downloads/nsync/public/* /usr/local/tensorflow/include/
+sudo cp -r bazel-genfiles/tensorflow /usr/local/tensorflow/include/
+sudo cp -r tensorflow/cc /usr/local/tensorflow/include/tensorflow
+sudo cp -r tensorflow/core /usr/local/tensorflow/include/tensorflow
+sudo mkdir /usr/local/tensorflow/include/third_party
+sudo cp -r third_party/eigen3 /usr/local/tensorflow/include/third_party/
+```
+
+3. 拷贝库文件
+
+```
+sudo mkdir /usr/local/tensorflow/lib
+sudo cp bazel-bin/tensorflow/libtensorflow_*.so /usr/local/tensorflow/lib
 ```
 
 ---
