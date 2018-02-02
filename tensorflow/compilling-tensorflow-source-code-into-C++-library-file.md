@@ -140,10 +140,11 @@ sudo cp bazel-bin/tensorflow/libtensorflow_*.so /usr/local/tensorflow/lib
 
 不论是使用了[方式一](#方式一)安装，还是使用了[方式二](#方式二)安装，至此，我们已经成功将Tensorflow源码编译成了C++库文件，附上`g++`命令编译方式：
 
-```
+```console
 g++ -std=c++11 ./main.cc -ltensorflow_framework -ltensorflow_cc -o tfcc \
 -I/usr/local/tensorflow/include/ \
 -L/usr/local/tensorflow/lib/ \
 -Wl,-rpath=/usr/local/tensorflow/lib/
 ```
 
+更多使用方式，可参考教程：[仅用TensorFlow C++训练一个DNN](./training-a-DNN-using-only-tensorflow-cc.md)
