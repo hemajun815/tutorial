@@ -50,6 +50,7 @@ original tutorials, share innocent, download free.
 - [Distributed TensorFlow (Supervisor) 实践](./tensorflow/distributed-tensorflow-by-supervisor.md)
 - [TensorFlow分布式训练（MonitoredTrainingSession）](./tensorflow/distributed-tensorflow-by-monitoredtrainingsession.md)
 - [将Tensorflow源码编译成C++库文件](./tensorflow/compilling-tensorflow-source-code-into-C++-library-file.md)
+- [仅用TensorFlow c++来训练一个DNN](./tensorflow/training-a-DNN-using-only-tensorflow-cc.md)
 
 ### ubuntu
 
