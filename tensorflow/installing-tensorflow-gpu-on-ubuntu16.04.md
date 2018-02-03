@@ -56,7 +56,7 @@
   ```
 ### 安装Tensorflow-GPU
 1. 安装pip：`apt install python-pip`
-2. 国内用户请参照[configuring-pip-to-use-domestic-source](https://github.com/hemajun815/tutorial/blob/master/pip/1.configuring-pip-to-use-domestic-source.md)将pip配置成使用国内源，可大幅度提升安装时的下载速度；
+2. 国内用户请参照[configuring-pip-to-use-domestic-source](../pip/configuring-pip-to-use-domestic-source.md)将pip配置成使用国内源，可大幅度提升安装时的下载速度；
 3. 更新pip：`pip install -U pip`
 4. 安装tensorlfow-gpu：`pip install tensorflow-gpu`
 ## 验证安装
