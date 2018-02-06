@@ -75,7 +75,7 @@ auto assign_b = tensorflow::ops::Assign(root, b, {{0.0f}});
 使用TensorFlow的基本操作定义网络，得到预测值的计算方式。
 
 ```c++
-auto y_ = tensorflow::ops::Add(root, tensorflow::ops::MatMul(root, w, x), b);
+auto y_ = tensorflow::ops::Add(root, tensorflow::ops::MatMul(root, x, w), b);
 ```
 
 以预测值与实际值的差异作为损失函数。
@@ -265,7 +265,7 @@ int main()
     auto assign_w = tensorflow::ops::Assign(root, w, tensorflow::ops::RandomNormal(root, {1, 1}, tensorflow::DataType::DT_FLOAT));
     auto b = tensorflow::ops::Variable(root, {1, 1}, tensorflow::DataType::DT_FLOAT);
     auto assign_b = tensorflow::ops::Assign(root, b, {{0.0f}});
-    auto y_ = tensorflow::ops::Add(root, tensorflow::ops::MatMul(root, w, x), b);
+    auto y_ = tensorflow::ops::Add(root, tensorflow::ops::MatMul(root, x, w), b);
     auto loss = tensorflow::ops::L2Loss(root, tensorflow::ops::Sub(root, y_, y));
     std::vector<tensorflow::Output> grad_outputs;
     TF_CHECK_OK(AddSymbolicGradients(root, {loss}, {w, b}, &grad_outputs));
