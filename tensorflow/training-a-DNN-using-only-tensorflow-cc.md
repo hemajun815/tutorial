@@ -96,7 +96,7 @@ TF_CHECK_OK(AddSymbolicGradients(root, {loss}, {w, b}, &grad_outputs));
 接着，依据一定的学习率将梯度变化应用与各个变量。
 
 ```c++
-auto learn_rate = tensorflow::ops::Cast(root, 0.01, tensorflow::DataType::DT_FLOAT);
+auto learn_rate = tensorflow::ops::Const(root, 0.01f, {});
 auto apply_w = tensorflow::ops::ApplyGradientDescent(root, w, learn_rate, {grad_outputs[0]});
 auto apply_b = tensorflow::ops::ApplyGradientDescent(root, b, learn_rate, {grad_outputs[1]});
 ```
@@ -269,7 +269,7 @@ int main()
     auto loss = tensorflow::ops::L2Loss(root, tensorflow::ops::Sub(root, y_, y));
     std::vector<tensorflow::Output> grad_outputs;
     TF_CHECK_OK(AddSymbolicGradients(root, {loss}, {w, b}, &grad_outputs));
-    auto learn_rate = tensorflow::ops::Cast(root, 0.01, tensorflow::DataType::DT_FLOAT);
+    auto learn_rate = tensorflow::ops::Const(root, 0.01f, {});
     auto apply_w = tensorflow::ops::ApplyGradientDescent(root, w, learn_rate, {grad_outputs[0]});
     auto apply_b = tensorflow::ops::ApplyGradientDescent(root, b, learn_rate, {grad_outputs[1]});
 
