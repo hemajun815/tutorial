@@ -43,14 +43,15 @@ original tutorials, share innocent, download free.
 
 ### tensorflow
 
-- [TensorFlow入门](./tensorflow/hello-tensorflow.md)
-- [Ubuntu16.04环境下安装TensorFlow-GPU版](./tensorflow/installing-tensorflow-gpu-on-ubuntu16.04.md)
-- [Windows10环境下安装TensorFlow-GPU版](./tensorflow/installing-tensorflow-gpu-on-win10.md)
-- [TensorFlow多机部署](./tensorflow/multi-tensorflow.md)
+- [TensorFlow 入门](./tensorflow/hello-tensorflow.md)
+- [Ubuntu16.04 环境下安装 TensorFlow-GPU 版](./tensorflow/installing-tensorflow-gpu-on-ubuntu16.04.md)
+- [Windows10 环境下安装 TensorFlow-GPU 版](./tensorflow/installing-tensorflow-gpu-on-win10.md)
+- [TensorFlow 多机部署](./tensorflow/multi-tensorflow.md)
 - [Distributed TensorFlow (Supervisor) 实践](./tensorflow/distributed-tensorflow-by-supervisor.md)
-- [TensorFlow分布式训练（MonitoredTrainingSession）](./tensorflow/distributed-tensorflow-by-monitoredtrainingsession.md)
-- [将Tensorflow源码编译成C++库文件](./tensorflow/compilling-tensorflow-source-code-into-C++-library-file.md)
-- [仅用TensorFlow c++来训练一个DNN](./tensorflow/training-a-DNN-using-only-tensorflow-cc.md)
+- [TensorFlow 分布式训练（MonitoredTrainingSession）](./tensorflow/distributed-tensorflow-by-monitoredtrainingsession.md)
+- [将 Tensorflow 源码编译成 C++ 库文件](./tensorflow/compilling-tensorflow-source-code-into-C++-library-file.md)
+- [TensorFlow C++ 示例代码](./tensorflow/tensorflow_cc-examples.md)
+- [仅用 TensorFlow c++ 来训练一个 DNN](./tensorflow/training-a-DNN-using-only-tensorflow-cc.md)
 
 ### ubuntu
 

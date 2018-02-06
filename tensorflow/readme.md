@@ -7,4 +7,5 @@
 - [Distributed TensorFlow (Supervisor) 实践](./distributed-tensorflow-by-supervisor.md)
 - [TensorFlow分布式训练（MonitoredTrainingSession）](./distributed-tensorflow-by-monitoredtrainingsession.md)
 - [将TensorFlow源码编译成C++库文件](./compilling-tensorflow-source-code-into-C++-library-file.md)
+- [TensorFlow C++ 示例代码](./tensorflow_cc-examples.md)
 - [仅用TensorFlow c++来训练一个DNN](./training-a-DNN-using-only-tensorflow-cc.md)
