@@ -148,3 +148,8 @@ g++ -std=c++11 ./main.cc -ltensorflow_framework -ltensorflow_cc -o tfcc \
 ```
 
 更多使用方式，可参考教程：[仅用TensorFlow C++训练一个DNN](./training-a-DNN-using-only-tensorflow-cc.md)
+
+## 附 Fix
+
+- **问题**：The TensorFlow library wasn't compiled to use *SSE4.1/SSE4.2/FMA/AVX/AVX2* instructions, but these are available on your machine and could speed up CPU computations.
+- **解决方案**：bazel 编译源码时加上选项后执行编译：`bazel build -c opt --copt=-mavx --copt=-mfma --copt=-mavx2 --copt=-msse4.1 --copt=-msse4.2 -k //tensorflow:libtensorflow_cc.so`
