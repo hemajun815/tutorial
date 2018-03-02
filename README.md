@@ -72,6 +72,7 @@ original tutorials, share innocent, download free.
 - [Win10环境下安装MarkDown Pad 2](./windows/installing-markdownpad2-on-win10.md)
 - [修改Windows窗口尺寸](./windows/modifying-windows-metrics.md)
 - [清除Win10内置应用](./windows/purging-win10-built-in-app.md)
+- [基于 PPTP 协议的 VPN 连接](./windows/connecting_vpn_on_pptp_protecol.md)
 
 ---
 

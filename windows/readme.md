@@ -4,3 +4,4 @@
 - [Win10环境下安装MarkDown Pad 2](./installing-markdownpad2-on-win10.md)
 - [修改Windows窗口尺寸](./modifying-windows-metrics.md)
 - [清除Win10内置应用](./purging-win10-built-in-app.md)
+- [基于 PPTP 协议的 VPN 连接](./connecting_vpn_on_pptp_protecol.md)
