@@ -10,3 +10,4 @@
 - [安装主题——Flatabulous](./installing-flat-theme:Flatabulous.md)
 - [Linux内核更新后，VM14 “内存不足”问题的解决方案](./vmware-workstation-not-enough-physical-memory-since-update.md)
 - [安装OpenCV-2.4.13.4](./installing-opencv-2.4.13.4.md)
+- [基于 PPTP 协议的 VPN 连接](./connecting_vpn_on_pptp_protecol.md)
