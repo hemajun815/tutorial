@@ -18,6 +18,7 @@ original tutorials, share innocent, download free.
 ### git
 
 - [Git Cheat Sheet](./git/git-cheat-sheet.md)
+- [搭建 git 服务器](./git/building-git-server.md)
 
 ### html-css-js
 
