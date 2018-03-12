@@ -45,6 +45,7 @@ original tutorials, share innocent, download free.
 ### Sublime
 
 - [Ubuntu 上安装 Sublime text 3](./sublime/installation-on-ubuntu.md)
+- [Sublime Text 3 注册码](./sublime/registration-code.md)
 
 ### tensorflow
 
