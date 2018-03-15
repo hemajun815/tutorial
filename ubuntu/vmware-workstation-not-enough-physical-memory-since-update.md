@@ -20,7 +20,7 @@ If you were able to power on this virtual machine on this host computer in the p
 ### 具体步骤
 
 ```console
-sudo cd /tmp
+cd /tmp
 sudo cp /usr/lib/vmware/modules/source/vmmon.tar .
 sudo tar xf vmmon.tar
 sudo rm vmmon.tar
