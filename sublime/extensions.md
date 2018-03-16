@@ -28,3 +28,14 @@ Package Control 是一个方便 Sublime text 管理扩展的扩展。
 3. 找到 "A File Icon" 然后敲击回车/ Enter 键；
 4. 待执行完成， "A File Icon" 就安装完成了。
 
+
+### Anaconda
+
+Anaconda 是一个可以将 Sublime Text3 变成 Python IDE 的插件，使用它，可以提高你的工作效率和质量。
+
+**安装**
+
+1. 快捷键 "ctrl+shift+p" 或者菜单 "Tools > Command Palette..." 打开 Command Palette ；
+2. 选择 "Package Control: Install Package" ；
+3. 找到 "Anaconda" 然后敲击回车/ Enter 键；
+4. 待执行完成， "Anaconda" 就安装完成了。
