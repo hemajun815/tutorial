@@ -42,7 +42,7 @@ original tutorials, share innocent, download free.
 
 - [删除数据库数据，清理自增字段](./sql/clean-data-source.md)
 
-### Sublime
+### sublime
 
 - [Ubuntu 上安装 Sublime text 3](./sublime/installation-on-ubuntu.md)
 - [Sublime Text 3 注册码](./sublime/registration-code.md)
