@@ -16,7 +16,7 @@
 
 4. 编辑文件：`sudo vim /usr/share/gnome-background-properties/xenial-wallpapers.xml`；
 
-5. 这是一个 *XML* 文件，我们在 *<wallpapers></wallpapers>* 节点中间增加如下内容：
+5. 这是一个 *XML* 文件，我们在 `<wallpapers></wallpapers>` 节点中间增加如下内容：
 
    ```xml
    <wallpaper>
