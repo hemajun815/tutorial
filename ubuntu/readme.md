@@ -12,3 +12,4 @@
 - [安装OpenCV-2.4.13.4](./installing-opencv-2.4.13.4.md)
 - [基于 PPTP 协议的 VPN 连接](./connecting_vpn_on_pptp_protecol.md)
 - [桌面壁纸配置](./wallpaper-configuration.md)
+- [修改用户登录界面](./modifying-user-login-interface.md)
