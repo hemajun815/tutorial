@@ -14,6 +14,7 @@ original tutorials, share innocent, download free.
 ### c-cpp
 
 - [String相关函数一览](./c-cpp/utility-of-string.md)
+- [从`(*(void(*)())0)();`理解函数声明](./c-cpp/function_declaration.md)
 
 ### git
 
