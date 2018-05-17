@@ -14,12 +14,12 @@ original tutorials, share innocent, download free.
 ### c-cpp
 
 - [String相关函数一览](./c-cpp/utility-of-string.md)
-- [从`(*(void(*)())0)();`理解函数声明](./c-cpp/function_declaration.md)
+- [从`(*(void(*)())0)();`理解函数声明](./c-cpp/function-declaration.md)
 
 ### deep-learning
 
-- [线性模型的局限性](./deep-learning/limitations_of_linear_models.md)
-- [经典损失函数：交叉熵](./deep-learning/cross_entropy.md)
+- [线性模型的局限性](./deep-learning/limitations-of-linear-models.md)
+- [经典损失函数：交叉熵](./deep-learning/cross-entropy.md)
 - [经典损失函数：均方误差](./deep-learning/mean-squared-error.md)
 
 ### git
