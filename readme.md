@@ -16,6 +16,10 @@ original tutorials, share innocent, download free.
 - [String相关函数一览](./c-cpp/utility-of-string.md)
 - [从`(*(void(*)())0)();`理解函数声明](./c-cpp/function_declaration.md)
 
+### deep-learning
+
+- [线性模型的局限性](./deep-learning/limitations_of_linear_models.md)
+
 ### git
 
 - [Git Cheat Sheet](./git/git-cheat-sheet.md)
