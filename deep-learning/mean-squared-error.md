@@ -13,3 +13,7 @@ MSE(y,y')=\frac{\sum_{i=1}^n(y_i-y'_i)^2}{n}
 $$
 
 其中， $y_i$ 为一个 batch 中第 i 个数据的正确答案，而 $y'_i$ 为神经网络给出的预测值。
+
+---
+
+参考文献：《[TensorFlow：实战Google深度学习框架（第二版）](https://book.douban.com/subject/30137062/)》
