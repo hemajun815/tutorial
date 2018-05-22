@@ -68,6 +68,7 @@ original tutorials, share innocent, download free.
 - [将 Tensorflow 源码编译成 C++ 库文件](./tensorflow/compilling-tensorflow-source-code-into-C++-library-file.md)
 - [TensorFlow C++ 示例代码](./tensorflow/tensorflow_cc-examples.md)
 - [仅用 TensorFlow c++ 来训练一个 DNN](./tensorflow/training-a-DNN-using-only-tensorflow-cc.md)
+- [模型持久化实现](./tensorflow/implementation-of-model-persistence.md)
 
 ### ubuntu
 

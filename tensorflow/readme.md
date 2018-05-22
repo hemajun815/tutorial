@@ -9,3 +9,4 @@
 - [将TensorFlow源码编译成C++库文件](./compilling-tensorflow-source-code-into-C++-library-file.md)
 - [TensorFlow C++ 示例代码](./tensorflow_cc-examples.md)
 - [仅用TensorFlow c++来训练一个DNN](./training-a-DNN-using-only-tensorflow-cc.md)
+- [模型持久化实现](./implementation-of-model-persistence.md)
