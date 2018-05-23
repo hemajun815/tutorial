@@ -1,0 +1,1 @@
+# apt upgrade时忽略指定包

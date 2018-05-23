@@ -85,6 +85,7 @@ original tutorials, share innocent, download free.
 - [基于 PPTP 协议的 VPN 连接](./ubuntu/connecting_vpn_on_pptp_protecol.md)
 - [桌面壁纸配置](./ubuntu/wallpaper-configuration.md)
 - [修改用户登录界面](./ubuntu/modifying-user-login-interface.md)
+- [apt upgrade时忽略指定包](./ubuntu/Ignoring-specified-packages-when-apt-upgrade.md)
 
 ### windows
 
