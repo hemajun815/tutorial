@@ -13,4 +13,4 @@
 - [基于 PPTP 协议的 VPN 连接](./connecting_vpn_on_pptp_protecol.md)
 - [桌面壁纸配置](./wallpaper-configuration.md)
 - [修改用户登录界面](./modifying-user-login-interface.md)
-- [apt upgrade时忽略指定包](./Ignoring-specified-packages-when-apt-upgrade.md)
+- [apt upgrade时忽略指定包](./ignoring-specified-packages-when-apt-upgrade.md)
