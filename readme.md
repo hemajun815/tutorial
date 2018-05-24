@@ -69,6 +69,7 @@ original tutorials, share innocent, download free.
 - [TensorFlow C++ 示例代码](./tensorflow/tensorflow_cc-examples.md)
 - [仅用 TensorFlow c++ 来训练一个 DNN](./tensorflow/training-a-DNN-using-only-tensorflow-cc.md)
 - [模型持久化实现](./tensorflow/implementation-of-model-persistence.md)
+- [TensorFlow 图像处理函数](./tensorflow/image-processing-functions-of-tensorflow.md)
 
 ### ubuntu
 
