@@ -72,3 +72,32 @@ flipped = tf.image.random_flip_up_down(img_data)
 # 以 50% 的概率左右翻转图像
 flipped = tf.image.random_flip_left_right(img_data)
 ```
+
+### 图像色彩调整
+
+和图像翻转类似，调整图像的亮度、对比度、饱和度和色相在很多图像识别应用中都不会影响识别结果。所以在训练神经网络模型时，可以随机调整训练图像的这些属性，从而使训练得到的模型尽可能小地受到无关因素的影响。 TensorFlow 提供了调整这些色彩相关属性的 API 。以下代码显示了如何修改图像的亮度。
+
+```python
+# 将图像亮度 -0.5 。
+adjusted = tf.image.adjust_brightness(img_data, -0.5)
+# 色彩调整 API 可能导致像素的实数值范围超过 0.0-1.0 ，因此在输出最终图像前需要将其值截断在 0.0-1.0 范围区间，否则不仅图像无法正常可视化，以此为输入的神经网络的训练质量也可能受到影响。
+# 如果对图像进行多项处理操作，那么这一截断过程应当在所有处理完成后进行。举例而言，假如对图像依次提高亮度和减少对比度，那么第二个操作可能将第一个操作生成的部分过亮的像素拉回到不超过 1.0 的范围内，因此在第一个操作后不应该立即截断。
+# 下面的样例假设截断操作在最终可视化图像前操作。
+adjusted = tf.image.clip_by_value(adjusted, 0.0, 1.0)
+
+# 将图像亮度 +0.5 。
+adjusted = tf.image.adjust_brightness(img_data, 0.5)
+# 在 [-max_delta, max_delta) 范围随机调整图像的亮度。
+adjusted = tf.image.random_brightness(img_data, max_delta)
+```
+
+以下代码显示了如何调整图像的对比度。
+
+```python
+# 将图像的对比度减少到 0.5 倍。
+adjusted = tf.image.adjust_contrast(img_data, 0.5)
+# 将图像的对比度增加 5 倍。
+adjusted = tf.image.adjust_contrast(img_data, 5)
+# 在 [lower, upper] 范围内随机调整图的对比度。
+adjusted = tf.image.random_contrast(img_data, lower, upper)
+```
