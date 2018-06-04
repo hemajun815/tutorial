@@ -15,6 +15,7 @@ original tutorials, share innocent, download free.
 
 - [String相关函数一览](./c-cpp/utility-of-string.md)
 - [从`(*(void(*)())0)();`理解函数声明](./c-cpp/function-declaration.md)
+- [指针声明](./c-cpp/pointer-declaration.md)
 
 ### deep-learning
 
