@@ -17,6 +17,7 @@ original tutorials, share innocent, download free.
 - [从`(*(void(*)())0)();`理解函数声明](./c-cpp/function-declaration.md)
 - [指针声明](./c-cpp/pointer-declaration.md)
 - [常量声明](./c-cpp/constant-declaration.md)
+- [变量的存储类型](./c-cpp/storage-type-of-variable.md)
 
 ### deep-learning
 
