@@ -19,6 +19,7 @@ original tutorials, share innocent, download free.
 - [常量声明](./c-cpp/constant-declaration.md)
 - [变量的存储类型](./c-cpp/storage-type-of-variable.md)
 - [回调函数](./c-cpp/callback-function.md)
+- [#Define](./c-cpp/define.md)
 
 ### deep-learning
 
