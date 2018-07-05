@@ -20,6 +20,7 @@ original tutorials, share innocent, download free.
 - [变量的存储类型](./c-cpp/storage-type-of-variable.md)
 - [回调函数](./c-cpp/callback-function.md)
 - [#Define](./c-cpp/define.md)
+- [未格式化的行I/O](./c-cpp/unformatted-line-io.md)
 
 ### deep-learning
 
