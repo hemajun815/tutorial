@@ -1,6 +1,6 @@
 # Tutorial / 教程
 
-original tutorials, share innocent, download free.
+Original tutorials, share innocently, download free.
 
 ## Index / 目录
 
