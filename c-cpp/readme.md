@@ -8,3 +8,4 @@
 - [回调函数](./callback-function.md)
 - [#Define](./define.md)
 - [未格式化的行I/O](./unformatted-line-io.md)
+- [二进制I/O](./binary-io.md)

@@ -21,6 +21,7 @@ Original tutorials, share innocently, download free.
 - [回调函数](./c-cpp/callback-function.md)
 - [#Define](./c-cpp/define.md)
 - [未格式化的行I/O](./c-cpp/unformatted-line-io.md)
+- [二进制I/O](./c-cpp/binary-io.md)
 
 ### deep-learning
 
