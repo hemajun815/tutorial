@@ -58,7 +58,7 @@ def main(_):
         labels = tf.one_hot(labels, 10)
 ```
 
-定义优化器用户执行梯度更新。
+定义优化器用于执行梯度更新。
 
 ```python
         # Create an optimizer that performs gradient descent.
