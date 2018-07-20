@@ -11,3 +11,4 @@
 - [仅用TensorFlow c++来训练一个DNN](./training-a-DNN-using-only-tensorflow-cc.md)
 - [模型持久化实现](./implementation-of-model-persistence.md)
 - [TensorFlow 图像处理函数](./image-processing-functions-of-tensorflow.md)
+- [多 GPU 数据并行](./data-parallelism-with-multi-gpus.md)

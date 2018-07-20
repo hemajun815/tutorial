@@ -77,6 +77,7 @@ Original tutorials, share innocently, download free.
 - [仅用 TensorFlow c++ 来训练一个 DNN](./tensorflow/training-a-DNN-using-only-tensorflow-cc.md)
 - [模型持久化实现](./tensorflow/implementation-of-model-persistence.md)
 - [TensorFlow 图像处理函数](./tensorflow/image-processing-functions-of-tensorflow.md)
+- [多 GPU 数据并行](./tensorflow/data-parallelism-with-multi-gpus.md)
 
 ### ubuntu
 
