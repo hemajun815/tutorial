@@ -28,3 +28,20 @@ smatch sma;
 cout << boolalpha << regex_match(str, sma, reg1) << endl; // true
 cout << sma.str() << endl; // 0,1 0,2;0,0 1,0;0,1 1,1;0,2 1,2;1,0 1,1;1,1 1,2;1,1 2,1;1,2 2,2;2,0 2,1
 ```
+
+### sregex_iterator
+
+`sregex_iterator` 可以返回多个匹配的结果。使用示例如下：
+
+```c++
+string str = "0,1 0,2;0,0 1,0;0,1 1,1;0,2 1,2;1,0 1,1;1,1 1,2;1,1 2,1;1,2 2,2;2,0 2,1";
+regex reg2("\\d,\\d \\d,\\d");
+sregex_iterator it(str.begin(), str.end(), reg2);
+sregex_iterator end;
+// 循环输出所有满足条件的结果。
+while (it != end)
+{
+    cout << it->str() << endl;
+    it++;
+}
+```
