@@ -22,6 +22,7 @@ Original tutorials, share innocently, download free.
 - [#Define](./c-cpp/define.md)
 - [未格式化的行I/O](./c-cpp/unformatted-line-io.md)
 - [二进制I/O](./c-cpp/binary-io.md)
+- [正则表达式](./c-cpp/regular_expression.md)
 
 ### deep-learning
 
