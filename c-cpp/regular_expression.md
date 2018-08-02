@@ -45,3 +45,14 @@ while (it != end)
     it++;
 }
 ```
+
+### regex_search
+
+`regex_search` 可以返回第一个匹配的结果。使用示例如下：
+
+```c++
+string str = "0,1 0,2;0,0 1,0;0,1 1,1;0,2 1,2;1,0 1,1;1,1 1,2;1,1 2,1;1,2 2,2;2,0 2,1";
+regex reg3("\\d,\\d \\d,\\d");
+cout << boolalpha << regex_search(str, sma, reg3) << endl; // true
+cout << sma.str() << endl; // 0,1 0,2
+```
