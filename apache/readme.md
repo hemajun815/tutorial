@@ -4,4 +4,4 @@
 - [Ubuntu16.04环境下Scala-2.11.7的安装与配置](./installing-scala2.11.7-on-ubuntu.md)
 - [Ubuntu16.04环境下Spark-2.2.0的安装和部署](./installing-spark2.2.0-on-ubuntu.md)
 - [Hadoop Streaming使用入门](./usage-of-hadoop-streaming.md)
-
+- [HDFS的Shell基本操作](./shell-command-of-hdfs.md)
