@@ -13,6 +13,7 @@ Original tutorials, share innocently, download free.
 - [HDFS的Shell基本操作](./apache/shell-command-of-hdfs.md)
 - [Windows环境下使用IDEA开发MapReduce程序](./apache/developing-mapreduce-programs-using-idea-in-windows-environment.md)
 - [MapReduce实例：单表链接](./apache/single-table-join.md)
+- [MapReduce示例：Reduce端多表级联](./apache/reduce-multi-table-join.md)
 
 ### c-cpp
 
