@@ -28,6 +28,10 @@
   10003,school_003
   ```
 
+## 思路
+
+map端对两个输入文件分别处理，建立相应<k,v>对，并进行来源标记，reduce端根据标记做出链接。
+
 ## 程序
 
 - ReduceMultiTableJoin.java
