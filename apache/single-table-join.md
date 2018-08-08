@@ -7,7 +7,7 @@
 
 ## 需求
 
-输入为两列数据，第一列Parent，第二列Child，要求编写MapReduce程序输出两列数据：GrandParent和GrandChild。
+输入为两列数据，第一列Parent，第二列Child，要求编写MapReduce程序输出两列数据：GrandParent name和GrandChild name。
 
 ## 数据
 
