@@ -130,6 +130,6 @@
 14. 集群上启动Hadoop：`./sbin/start-dfs.sh && ./sbin/start-yarn.sh`；
 15. 新建输入文件夹：`./bin/hadoop fs -mkdir /WordCount/ && ./bin/hadoop fs -mkdir /WordCount/input/`（更多HDFS操作可参考[HDFS的Shell基本操作](./shell-command-of-hdfs.md)）；
 16. 新建输入文件：`echo "Hello Hadoop" > text.txt`；
-17. 将输入文件上传到HDFS：`./bin/hadoop fs -put ./text.txt /WordCount/input/`；
+17. 将输入文件上传到HDFS：`./bin/hadoop fs -put ./text.txt /WordCount/input/`（更多HDFS操作可参考[HDFS的Shell基本操作](./shell-command-of-hdfs.md)）；
 18. 回到IDEA，菜单栏点击`Run`，选择`Run 'Hadoop'`，可看到程序正在编译执行，Run视图中可看到运行日志；
 19. 程序运行完成后，可在HDFS上查看相应的运行日志和运行结果。
