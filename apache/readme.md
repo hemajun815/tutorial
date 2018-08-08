@@ -6,3 +6,4 @@
 - [Hadoop Streaming使用入门](./usage-of-hadoop-streaming.md)
 - [HDFS的Shell基本操作](./shell-command-of-hdfs.md)
 - [Windows环境下使用IDEA开发MapReduce程序](./developing-mapreduce-programs-using-idea-in-windows-environment.md)
+- [MapReduce实例：单表链接](./single-table-join.md)

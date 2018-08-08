@@ -12,6 +12,7 @@ Original tutorials, share innocently, download free.
 - [Hadoop Streaming使用入门](./apache/usage-of-hadoop-streaming.md)
 - [HDFS的Shell基本操作](./apache/shell-command-of-hdfs.md)
 - [Windows环境下使用IDEA开发MapReduce程序](./apache/developing-mapreduce-programs-using-idea-in-windows-environment.md)
+- [MapReduce实例：单表链接](./apache/single-table-join.md)
 
 ### c-cpp
 
