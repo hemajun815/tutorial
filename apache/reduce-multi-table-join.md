@@ -1,4 +1,4 @@
-# MapReduce示例：Reduce端多表级联
+# MapReduce实例：Reduce端多表链接
 
 ## 前言
 

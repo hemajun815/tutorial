@@ -7,4 +7,5 @@
 - [HDFS的Shell基本操作](./shell-command-of-hdfs.md)
 - [Windows环境下使用IDEA开发MapReduce程序](./developing-mapreduce-programs-using-idea-in-windows-environment.md)
 - [MapReduce实例：单表链接](./single-table-join.md)
-- [MapReduce示例：Reduce端多表级联](./reduce-multi-table-join.md)
+- [MapReduce实例：Reduce端多表链接](./reduce-multi-table-join.md)
+- [MapReduce实例：Map端多表链接](./apache/cache_table_join.md)
