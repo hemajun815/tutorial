@@ -15,6 +15,7 @@ Original tutorials, share innocently, download free.
 - [MapReduce实例：单表链接](./apache/single-table-join.md)
 - [MapReduce实例：Reduce端多表链接](./apache/reduce-multi-table-join.md)
 - [MapReduce实例：Map端多表链接](./apache/cache-table-join.md)
+- [MapReduce实例：二次排序](./apache/secondary-sort.md)
 
 ### c-cpp
 

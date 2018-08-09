@@ -9,3 +9,4 @@
 - [MapReduce实例：单表链接](./single-table-join.md)
 - [MapReduce实例：Reduce端多表链接](./reduce-multi-table-join.md)
 - [MapReduce实例：Map端多表链接](./cache-table-join.md)
+- [MapReduce实例：二次排序](./secondary-sort.md)
