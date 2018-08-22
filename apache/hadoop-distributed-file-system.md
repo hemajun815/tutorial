@@ -91,7 +91,7 @@ dfs.blocksize是一个文件块的大小，默认64M。
 
 如果某个DataNode在写数据的时候当掉了，下面这些对用户透明的步骤会被执行： 
 1. 管道线关闭，所有确认队列上的数据会被挪到数据队列的首部重新发送，这样可以确保管道线中当掉的DataNode下流的DataNode不会因为当掉的DataNode而丢失数据包。 
-2. 在还在正常运行的DataNode上的当前block上做一个标志，这样当当掉的DataNode重新启动以后NameNode就会知道该DataNode上哪个block是刚才当机时残留下的局部损坏block，从而可以把它删掉。 
+2. 在还在正常运行的DataNode上的当前block上做一个标志，这样当当掉的DataNode重新启动以后NameNode就会知道该DataNode上哪个block是刚才宕机时残留下的局部损坏block，从而可以把它删掉。 
 3. 已经当掉的DataNode从管道线中被移除，未写完的block的其他数据继续被写入到其他两个还在正常运行的DataNode中去，NameNode知道这个block还处在under-replicated状态（也即备份数不足的状态）下，然后他会安排一个新的replica从而达到要求的备份数，后续的block写入方法同前面正常时候一样。
 
 有可能管道线中的多个DataNode当掉（虽然不太经常发生），但只要dfs.replication.min（默认为1）个replica被创建，我们就认为该创建成功了。剩余的replica会在以后异步创建以达到指定的replica数。 
