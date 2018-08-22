@@ -130,3 +130,8 @@ HDFS相关参数在hdfs-site.xml文件中设置。
 
 ## 集群环境配置
 
+详见[Ubuntu16.04环境下安装配置Hadoop2.8.1集群](./installing-hadoop2.8.1-on-ubuntu.md)。
+
+## shell命令
+
+详见[HDFS的Shell基本操作](./shell-command-of-hdfs.md)。
