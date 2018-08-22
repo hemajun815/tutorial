@@ -6,6 +6,7 @@
 - [Hadoop Streaming使用入门](./usage-of-hadoop-streaming.md)
 - [Hadoop分布式文件系统：HDFS](./hadoop-distributed-file-system.md)
 - [HDFS的Shell基本操作](./shell-command-of-hdfs.md)
+- [Hadoop集群中NameNode单点故障的解决方案对比](./solutions-for-namenode-single-point-failure.md)
 - [Windows环境下使用IDEA开发MapReduce程序](./developing-mapreduce-programs-using-idea-in-windows-environment.md)
 - [HDFS的JAVA Api](./java-api-of-hdfs.md)
 - [Hadoop2.x资源调度平台：YARN](./yet-another-resource-negotiator.md)
