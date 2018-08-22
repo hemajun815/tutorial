@@ -22,6 +22,7 @@ Original tutorials, share innocently, download free.
 - [MapReduce实例：Map端多表链接](./apache/cache-table-join.md)
 - [MapReduce实例：二次排序](./apache/secondary-sort.md)
 - [MapReduce实例：全排序](./apache/total-sort.md)
+- [Hadoop数据库：HBase](./apache/hbase.md)
 
 ### c-cpp
 

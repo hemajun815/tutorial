@@ -16,3 +16,4 @@
 - [MapReduce实例：Map端多表链接](./cache-table-join.md)
 - [MapReduce实例：二次排序](./secondary-sort.md)
 - [MapReduce实例：全排序](./total-sort.md)
+- [Hadoop数据库：HBase](./hbase.md)
