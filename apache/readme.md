@@ -10,6 +10,7 @@
 - [Windows环境下使用IDEA开发MapReduce程序](./developing-mapreduce-programs-using-idea-in-windows-environment.md)
 - [HDFS的JAVA Api](./java-api-of-hdfs.md)
 - [Hadoop2.x资源调度平台：YARN](./yet-another-resource-negotiator.md)
+- [Hadoop分布式运算框架：MapReduce](./map-reduce.md)
 - [MapReduce实例：单表链接](./single-table-join.md)
 - [MapReduce实例：Reduce端多表链接](./reduce-multi-table-join.md)
 - [MapReduce实例：Map端多表链接](./cache-table-join.md)
