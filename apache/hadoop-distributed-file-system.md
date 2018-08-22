@@ -124,5 +124,9 @@ HDFS相关参数在hdfs-site.xml文件中设置。
 | dfs.data.dir | DataNode在本地磁盘存放block的位置，可以是以逗号分隔的目录列表 | ${hadoop.tmp.dir}/dfs/data |
 | dfs.permissions | 检查权限 | true |
 | dfs.replication | 文件副本数 | 3 |
+| dfs.namenode.secondary.http-address | 定义HDFS对应的HTTP服务器地址和端口 | 0.0.0.0:50090 |
 
 更多参数说明请参考[http://hadoop.apache.org/docs/r2.8.2/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml](http://hadoop.apache.org/docs/r2.8.2/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml)。
+
+## 集群环境配置
+
