@@ -7,6 +7,7 @@
 - [Hadoop分布式文件系统：HDFS](./hadoop-distributed-file-system.md)
 - [HDFS的Shell基本操作](./shell-command-of-hdfs.md)
 - [Windows环境下使用IDEA开发MapReduce程序](./developing-mapreduce-programs-using-idea-in-windows-environment.md)
+- [HDFS的JAVA Api](./java-api-of-hdfs.md)
 - [MapReduce实例：单表链接](./single-table-join.md)
 - [MapReduce实例：Reduce端多表链接](./reduce-multi-table-join.md)
 - [MapReduce实例：Map端多表链接](./cache-table-join.md)
