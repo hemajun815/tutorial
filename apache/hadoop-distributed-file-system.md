@@ -17,6 +17,13 @@ HDFS的设计理念是可以运行在普通机器上，以流式数据方式存�
 2. 小文件问题：由于NameNode将文件系统的元数据存储在内存中，因此该文件系统所能存储的文件总量受限于NameNode的内存总容量。根据经验，每个文件、目录和数据块的存储信息大约占150字节。过多的小文件存储会大量消耗NameNode的存储量。
 3. 文件修改问题：HDFS中的文件只有一个Writer，它不支持具有多个写入者的操作，也不支持在文件的任意位置进行修改。
 
+### 适用场景
+
+1. 存取并管理PB级数据；
+2. 处理非结构化数据；
+3. 注重数据处理的吞吐量，对延时不敏感；
+4. 应用模式为一次写入多次读取的存取模式。
+
 ### 架构
 
 HDFS是一个主从结构，一个HDFS集群由一个（用于管理文件命名空间和调节客户端访问文件的主服务器）节点NameNode和一些（用于存储具体文件数据的服务器）节点DataNodes组成。
@@ -47,3 +54,48 @@ HDFS内部机制是将一个文件分割成一个或多个块，这些块被存�
 dfs.blocksize是一个文件块的大小，默认64M。 
 每一个block会在多个DataNode上存储多份副本，默认是3份。 
 太大的话会有较少map同时计算，太小的话也浪费可用map个数资源，而且文件太小NameNode就浪费内存多。所以应该根据需要进行设置。
+
+## 文件读写
+
+### 权限控制
+
+对于文件和目录，HDFS提供三种权限模式：读（r）、写（w）、执行（x）。读取文件或列出目录内容时需要只读权限。写入一个文件，或是在一个目录上创建及删除文件或目录，需要写入权限。对于文件而言，可执行权限可以忽略，因为你不能在HDFS中执行文件，但在访问一个目录的子项时需要该权限。
+
+每个文件和目录都有所属用户（owner）、所属组别（group）及模式（mode）。这个模式是由所属用户的权限、组内成员的权限及其他用户的权限组成的。 
+
+默认情况下，可以通过正在运行进程的用户名和组名来唯一确定客户端的标示。但由于客户端是远程的，任何用户都可以简单的在远程系统上以他的名义创建一个账户来进行访问。因此，作为共享文件系统资源和防止数据意外损失的一种机制，权限只能供合作团体中的用户使用，而不能在一个不友好的环境中保护资源。注意，最新的hadoop系统支持kerberos用户认证，该认证去除了这些限制。但是，除了上述限制之外，为防止用户或者自动工具及程序意外修改或删除文件系统的重要部分，启用权限控制还是很重要的。 
+
+注意：这里有一个超级用户的概念，超级用户是NameNode进程的标识。对于超级用户，系统不会执行任何权限检查。
+
+### 读文件
+
+1. 客户端通过调用FileSystem对象的open()方法来打开希望读取的文件，对于HDFS来说，这个对象是分布式文件系统的一个实例。 
+2. DistributedFileSystem通过使用RPC来调用NameNode，以确定文件起始块的位置。对于每一个块，NameNode返回存有该块复本的DataNode地址。此外，这些DataNode根据他们与客户端的距离来排序。如果客户端本身就是一个DataNode，并保存有相应数据块的一个复本时，该节点将从本地DataNode中读取数据。 
+3. DistributedFileSystem类返回一个FSDataInputStream对象给客户端读取数据。FSDataInputStream类转而封装DFSInputStream对象，该对象管理着DataNode和NameNode的I/O。 
+4. 接着，客户端对这个输入流调用read()方法。存储着文件起始块的DataNode地址的DFSInputStream随即连接距离最近的DataNode。通过对数据流反复调用read()方法，可以将数据从DataNode传输到客户端。到达块的末端时，DFSInputStream会关闭与该DataNode的连接，然后寻找下一个块的最佳DataNode。客户端只需要读取连续的流，并且对于客户端都是透明的。 
+5. 客户端从流中读取数据时，块是按照打开DFSInputStream与DataNode新建连接的顺序读取的。它也需要询问NameNode来检索下一批所需块的DataNode的位置。一旦客户端完成读取，就对FSDataInputStream调用close()方法。 
+
+注意：在读取数据的时候，如果DFSInputStream在与DataNode通讯时遇到错误，它便会尝试从这个块的另外一个临近DataNode读取数据。他也会记住那个故障DataNode，以保证以后不会反复读取该节点上后续的块。DFSInputStream也会通过校验和确认从DataNode发送来的数据是否完整。如果发现一个损坏的块， DFSInputStream就会在试图从其他DataNode读取一个块的副本之前通知NameNode。 
+
+总结：在这个设计中，NameNode会告知客户端每个块中最佳的DataNode，并让客户端直接联系该DataNode去检索数据。由于数据流分散在该集群中的所有DataNode，所以这种设计会使HDFS可扩展到大量的并发客户端。同时，NameNode仅需要响应位置的请求（这些信息存储在内存中，非常高效），而无需响应数据请求，否则随着客户端数量的增长，NameNode很快会成为一个瓶颈。
+
+### 写文件
+
+1. 首先客户端通过DistributedFileSystem上的create()方法指明一个预创建的文件的文件名。
+2. DistributedFileSystem再通过RPC调用向NameNode申请创建一个新文件（这时该文件还没有分配相应的block）。NameNode检查是否有同名文件存在以及用户是否有相应的创建权限，如果检查通过，NameNode会为该文件创建一个新的记录，否则的话文件创建失败，客户端得到一个IOException异常。DistributedFileSystem返回一个FSDataOutputStream以供客户端写入数据，与FSDataInputStream类似，FSDataOutputStream封装了一个DFSOutputStream用于处理NameNode与datanode之间的通信。 
+3. 当客户端开始写数据时，DFSOutputStream把写入的数据分成包（packet）, 放入一个中间队列——数据队列（data queue）中去。DataStreamer从数据队列中取数据，同时向NameNode申请一个新的block来存放它已经取得的数据。NameNode选择一系列合适的DataNode（个数由文件的replica数决定）构成一个管道线（pipeline），这里我们假设replica为3，所以管道线中就有三个DataNode。
+4. DataSteamer把数据流式的写入到管道线中的第一个DataNode中，第一个DataNode再把接收到的数据转到第二个DataNode中，以此类推。 
+5. DFSOutputStream同时也维护着另一个中间队列——确认队列（ack queue），确认队列中的包只有在得到管道线中所有的DataNode的确认以后才会被移出确认队列。 
+6. 当客户端完成写数据后，它会调用close()方法。这个操作会冲洗（flush）所有剩下的package到pipeline中。
+7. 等待这些package确认成功，然后通知NameNode写入文件成功。这时候NameNode就知道该文件由哪些block组成（因为DataStreamer向NameNode请求分配新block，NameNode当然会知道它分配过哪些blcok给给定文件），它会等待最少的replica数被创建，然后成功返回。
+
+如果某个DataNode在写数据的时候当掉了，下面这些对用户透明的步骤会被执行： 
+1. 管道线关闭，所有确认队列上的数据会被挪到数据队列的首部重新发送，这样可以确保管道线中当掉的DataNode下流的DataNode不会因为当掉的DataNode而丢失数据包。 
+2. 在还在正常运行的DataNode上的当前block上做一个标志，这样当当掉的DataNode重新启动以后NameNode就会知道该DataNode上哪个block是刚才当机时残留下的局部损坏block，从而可以把它删掉。 
+3. 已经当掉的DataNode从管道线中被移除，未写完的block的其他数据继续被写入到其他两个还在正常运行的DataNode中去，NameNode知道这个block还处在under-replicated状态（也即备份数不足的状态）下，然后他会安排一个新的replica从而达到要求的备份数，后续的block写入方法同前面正常时候一样。
+
+有可能管道线中的多个DataNode当掉（虽然不太经常发生），但只要dfs.replication.min（默认为1）个replica被创建，我们就认为该创建成功了。剩余的replica会在以后异步创建以达到指定的replica数。 
+
+注意：
+1. hdfs在写入的过程中，有一点与hdfs读取的时候非常相似，就是：DataStreamer在写入数据的时候，每写完一个DataNode的数据块（默认64M）,都会重新向NameNode申请合适的DataNode列表。这是为了保证系统中DataNode数据存储的均衡性。
+2. hdfs写入过程中，DataNode管线的确认应答包并不是每写完一个DataNode，就返回一个确认应答，而是一直写入，直到最后一个DataNode写入完毕后，统一返回应答包。如果中间的一个DataNode出现故障，那么返回的应答就是前面完好的DataNode确认应答，和故障DataNode的故障异常。这样我们也就可以理解，在写入数据的过程中，为什么数据包的校验是在最后一个DataNode完成
