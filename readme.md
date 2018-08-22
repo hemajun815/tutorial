@@ -14,6 +14,7 @@ Original tutorials, share innocently, download free.
 - [HDFS的Shell基本操作](./apache/shell-command-of-hdfs.md)
 - [Windows环境下使用IDEA开发MapReduce程序](./apache/developing-mapreduce-programs-using-idea-in-windows-environment.md)
 - [HDFS的JAVA Api](./apache/java-api-of-hdfs.md)
+- [Hadoop2.x资源调度平台：YARN](./apache/yet-another-resource-negotiator.md)
 - [MapReduce实例：单表链接](./apache/single-table-join.md)
 - [MapReduce实例：Reduce端多表链接](./apache/reduce-multi-table-join.md)
 - [MapReduce实例：Map端多表链接](./apache/cache-table-join.md)
