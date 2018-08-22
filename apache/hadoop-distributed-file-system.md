@@ -99,3 +99,30 @@ dfs.blocksize是一个文件块的大小，默认64M。
 注意：
 1. hdfs在写入的过程中，有一点与hdfs读取的时候非常相似，就是：DataStreamer在写入数据的时候，每写完一个DataNode的数据块（默认64M）,都会重新向NameNode申请合适的DataNode列表。这是为了保证系统中DataNode数据存储的均衡性。
 2. hdfs写入过程中，DataNode管线的确认应答包并不是每写完一个DataNode，就返回一个确认应答，而是一直写入，直到最后一个DataNode写入完毕后，统一返回应答包。如果中间的一个DataNode出现故障，那么返回的应答就是前面完好的DataNode确认应答，和故障DataNode的故障异常。这样我们也就可以理解，在写入数据的过程中，为什么数据包的校验是在最后一个DataNode完成
+
+## 参数配置
+
+### core-default.xml
+
+集群全局参数在core-site.xml文件中设置，用于定义系统级别的参数。
+
+| 名称 | 说明 | 默认值 |
+| --- | --- | --- |
+| hadoop.tmp.dir | 临时文件夹 | /tmp/hadoop-${user.name}|
+| fs.defaultFS | 文件系统主机和端口 | file:/// |
+| io.file.buffer.size | 流文件的缓冲区大小，建议设置为65536 （ 64K）| 4096 |
+
+更多参数说明请参考[http://hadoop.apache.org/docs/r2.8.2/hadoop-project-dist/hadoop-common/core-default.xml](http://hadoop.apache.org/docs/r2.8.2/hadoop-project-dist/hadoop-common/core-default.xml)。
+
+### hdfs-site.xml
+
+HDFS相关参数在hdfs-site.xml文件中设置。
+
+| 名称 | 说明 | 默认值 |
+| --- | --- | --- |
+| dfs.name.dir | NameNode元数据存放位置 | ${hadoop.tmp.dir}/dfs/name |
+| dfs.data.dir | DataNode在本地磁盘存放block的位置，可以是以逗号分隔的目录列表 | ${hadoop.tmp.dir}/dfs/data |
+| dfs.permissions | 检查权限 | true |
+| dfs.replication | 文件副本数 | 3 |
+
+更多参数说明请参考[http://hadoop.apache.org/docs/r2.8.2/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml](http://hadoop.apache.org/docs/r2.8.2/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml)。
