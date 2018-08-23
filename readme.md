@@ -2,8 +2,6 @@
 
 Original tutorials, share innocently, download free.
 
-## Index / 目录
-
 ### apache
 
 - [Ubuntu16.04环境下安装配置Hadoop2.8.1集群](./apache/installing-hadoop2.8.1-on-ubuntu.md)
