@@ -314,3 +314,7 @@ hbase 使用三层类似B+树的结构来保存region位置：
 ## Shell操作
 
 详见[HBase的Shell基本操作](./shell-command-of-hbase.md)。
+
+## Java Api
+
+详见[HBase的Java Api](./java-api-of-hbase.md)
