@@ -6,9 +6,9 @@
 
 NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”。NoSQL数据库的四大分类：
 
-- 键值数据库：键值数据库就像在传统语言中使用的哈希表。你可以通过key来添加、查询或者删除数据，鉴于使用主键访问，所以会获得不错的性能及扩展性。代表产品Redis。 
-- 列数据库：列存储数据库将数据储存在列族（column family）中，一个列族存储经常被一起查询的相关数据。代表产品HBase。 
-- 文档型数据库：面向文档数据库会将数据以文档的形式储存。每个文档都是自包含的数据单元，是一系列数据项的集合。代表产品MongoDB。 
+- 键值数据库：键值数据库就像在传统语言中使用的哈希表。你可以通过key来添加、查询或者删除数据，鉴于使用主键访问，所以会获得不错的性能及扩展性。代表产品Redis。
+- 列数据库：列存储数据库将数据储存在列族（column family）中，一个列族存储经常被一起查询的相关数据。代表产品HBase。
+- 文档型数据库：面向文档数据库会将数据以文档的形式储存。每个文档都是自包含的数据单元，是一系列数据项的集合。代表产品MongoDB。
 - 图数据库：图数据库允许我们将数据以图的方式储存。实体会被作为顶点，而实体之间的关系则会被作为边。代表产品Neo4J。
 
 ### 列数据库
@@ -184,14 +184,14 @@ HRegionServer是HBase中最核心的模块，主要负责响应用户I/O请求�
 ### 物理存储
 
 - 每个column family存储在HDFS上的一个单独文件中，空值不会被保存；
-- Key和Version number在每个column family中均有一份； 
-- HBase为每个值维护了多级索引，即：< key, column family, column name, timestamp >。 
+- Key和Version number在每个column family中均有一份；
+- HBase为每个值维护了多级索引，即：< key, column family, column name, timestamp >。
 
-物理存储: 
+物理存储:
 
-1. Table中所有行都按照RowKey的字典序排列； 
-2. Table在行的方向上分割为多个Region； 
-3. Region按大小分割的，每个表开始只有一个region，随着数据增多，region不断增大，当增大到一个阀值的时候，region就会等分会两个新的region，之后会有越来越多的region； 
+1. Table中所有行都按照RowKey的字典序排列；
+2. Table在行的方向上分割为多个Region；
+3. Region按大小分割的，每个表开始只有一个region，随着数据增多，region不断增大，当增大到一个阀值的时候，region就会等分会两个新的region，之后会有越来越多的region；
 4. Region是Hbase中分布式存储和负载均衡的最小单元，不同Region分布到不同RegionServer上。
 5. Region虽然是分布式存储的最小单元，但并不是存储的最小单元。事实上，Region由一个或者多个Store组成，每个store保存一个column family。每个Strore又由一个memStore和0至多个StoreFile组成。
 6. StoreFile以HFile格式保存在HDFS上，Hfile的格式如下：
@@ -216,13 +216,13 @@ HRegionServer是HBase中最核心的模块，主要负责响应用户I/O请求�
 
 master使用zookeeper来跟踪region server状态。当某个region server启动时，会首先在zookeeper上的server目录下建立代表自己的文件，并获得该文件的独占锁。由于master订阅了server目录上的变更消息，当server目录下的文件出现新增或删除操作时，master可以得到来自zookeeper的实时通知。因此一旦region server上线，master能马上得到消息。 
 
-**下线** 
+**下线**
 
 当region server下线时，它和zookeeper的会话断开，zookeeper而自动释放代表这台server的文件上的独占锁。而master不断轮询server目录下文件的锁状态。如果master发现某个region server丢失了它自己的独占锁，(或者master连续几次和region server通信都无法成功)，master就是尝试去获取代表这个region server的读写锁，一旦获取成功，就可以确定：
 
 1. region server和zookeeper之间的网络断开了。
 2. region server挂了。
-   
+
 无论哪种情况，region server都无法继续为它的region提供服务了，此时master会删除server目录下代表这台region server的文件，并将这台region server的region分配给其它还活着的server。
 
 如果网络短暂出现问题导致region server丢失了它的锁，那么region server重新连接到zookeeper之后，只要代表它的文件还在，它就会不断尝试获取这个文件上的锁，一旦获取到了，就可以继续提供服务。
@@ -236,7 +236,7 @@ master使用zookeeper来跟踪region server状态。当某个region server启动
 3. 和2中的每个region server通信，获得当前已分配的region和region server的对应关系。
 4. 扫描.META.region的集合，计算得到当前还未分配的region，将他们放入待分配region列表。
 
-**下线** 
+**下线**
 
 由于master只维护表和region的元数据，而不参与表数据I/O的过程，master下线仅导致所有元数据的修改被冻结(无法创建删除表，无法修改表的schema，无法进行region的负载均衡，无法处理region上下线，无法进行region的合并，唯一例外的是region的split可以正常进行，因为只有region server参与)，表的数据读写还可以正常进行。因此master下线短时间内对整个HBase集群没有影响。从上线过程可以看到，master保存的信息全是可以冗余信息（都可以从系统其它地方收集到或者计算出来），因此，一般HBase集群中总是有一个master在提供服务，还有一个以上的"master"在等待时机抢占它的位置。
 
@@ -297,7 +297,7 @@ hbase 使用三层类似B+树的结构来保存region位置：
 2. 键是排好序了的。
 3. 按列存储的。
 
-- 首先，能快速找到行所在的region(分区)，假设表有10亿条记录，占空间1TB，分裂成了500个region，1个region占2个G。最多读取2G的记录，就能找到对应记录； 
+- 首先，能快速找到行所在的region(分区)，假设表有10亿条记录，占空间1TB，分裂成了500个region，1个region占2个G。最多读取2G的记录，就能找到对应记录；
 - 其次，是按列存储的，其实是列族，假设分为3个列族，每个列族就是666M，如果要查询的东西在其中1个列族上，1个列族包含1个或者多个HStoreFile，假设一个HStoreFile是128M，该列族包含5个HStoreFile在磁盘上. 剩下的在内存中。
 - 再次，是排好序了的，要的记录有可能在最前面，也有可能在最后面，假设在中间，我们只需遍历2.5个HStoreFile共300M。
 - 最后，每个HStoreFile(HFile的封装)，是以键值对（key-value）方式存储，只要遍历一个个数据块中的key的位置，并判断符合条件可以了。一般key是有限的长度，假设跟value是1:19（忽略HFile上其它块），最终只需要15M就可获取的对应的记录，按照磁盘的访问100M/S，只需0.15秒。加上块缓存机制（LRU原则），会取得更高的效率。
@@ -309,4 +309,8 @@ hbase 使用三层类似B+树的结构来保存region位置：
 
 ## 安装与配置
 
-[Ubuntu16.04环境下安装配置HBase2.1.0集群](./installing-hbase2.1.0-on-ubuntu.md)
+详见[Ubuntu16.04环境下安装配置HBase2.1.0集群](./installing-hbase2.1.0-on-ubuntu.md)。
+
+## Shell操作
+
+详见[HBase的Shell基本操作](./shell-command-of-hbase.md)。
