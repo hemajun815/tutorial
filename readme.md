@@ -23,6 +23,7 @@ Original tutorials, share innocently, download free.
 - [Hadoop数据库：HBase](./apache/hbase.md)
 - [Ubuntu16.04环境下安装配置HBase2.1.0集群](./apache/installing-hbase2.1.0-on-ubuntu.md)
 - [HBase的Shell基本操作](./apache/shell-command-of-hbase.md)
+- [HBase的Java Api](./apache/java-api-of-hbase.md)
 
 ### c-cpp
 

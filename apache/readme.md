@@ -19,3 +19,4 @@
 - [Hadoop数据库：HBase](./hbase.md)
 - [Ubuntu16.04环境下安装配置HBase2.1.0集群](./installing-hbase2.1.0-on-ubuntu.md)
 - [HBase的Shell基本操作](./shell-command-of-hbase.md)
+- [HBase的Java Api](./java-api-of-hbase.md)
