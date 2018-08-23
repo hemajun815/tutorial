@@ -106,11 +106,11 @@ dfs.blocksize是一个文件块的大小，默认64M。
 
 集群全局参数在core-site.xml文件中设置，用于定义系统级别的参数。
 
-| 名称 | 说明 | 默认值 |
-| --- | --- | --- |
-| hadoop.tmp.dir | 临时文件夹 | /tmp/hadoop-${user.name}|
-| fs.defaultFS | 文件系统主机和端口 | file:/// |
-| io.file.buffer.size | 流文件的缓冲区大小，建议设置为65536 （ 64K）| 4096 |
+| 名称                | 说明                                         | 默认值                   |
+| ------------------- | -------------------------------------------- | ------------------------ |
+| hadoop.tmp.dir      | 临时文件夹                                   | /tmp/hadoop-${user.name} |
+| fs.defaultFS        | 文件系统主机和端口                           | file:///                 |
+| io.file.buffer.size | 流文件的缓冲区大小，建议设置为65536 （ 64K） | 4096                     |
 
 更多参数说明请参考[http://hadoop.apache.org/docs/r2.8.2/hadoop-project-dist/hadoop-common/core-default.xml](http://hadoop.apache.org/docs/r2.8.2/hadoop-project-dist/hadoop-common/core-default.xml)。
 
@@ -118,13 +118,13 @@ dfs.blocksize是一个文件块的大小，默认64M。
 
 HDFS相关参数在hdfs-site.xml文件中设置。
 
-| 名称 | 说明 | 默认值 |
-| --- | --- | --- |
-| dfs.name.dir | NameNode元数据存放位置 | ${hadoop.tmp.dir}/dfs/name |
-| dfs.data.dir | DataNode在本地磁盘存放block的位置，可以是以逗号分隔的目录列表 | ${hadoop.tmp.dir}/dfs/data |
-| dfs.permissions | 检查权限 | true |
-| dfs.replication | 文件副本数 | 3 |
-| dfs.namenode.secondary.http-address | 定义HDFS对应的HTTP服务器地址和端口 | 0.0.0.0:50090 |
+| 名称                                | 说明                                                          | 默认值                     |
+| ----------------------------------- | ------------------------------------------------------------- | -------------------------- |
+| dfs.name.dir                        | NameNode元数据存放位置                                        | ${hadoop.tmp.dir}/dfs/name |
+| dfs.data.dir                        | DataNode在本地磁盘存放block的位置，可以是以逗号分隔的目录列表 | ${hadoop.tmp.dir}/dfs/data |
+| dfs.permissions                     | 检查权限                                                      | true                       |
+| dfs.replication                     | 文件副本数                                                    | 3                          |
+| dfs.namenode.secondary.http-address | 定义HDFS对应的HTTP服务器地址和端口                            | 0.0.0.0:50090              |
 
 更多参数说明请参考[http://hadoop.apache.org/docs/r2.8.2/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml](http://hadoop.apache.org/docs/r2.8.2/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml)。
 
@@ -135,3 +135,7 @@ HDFS相关参数在hdfs-site.xml文件中设置。
 ## shell命令
 
 详见[HDFS的Shell基本操作](./shell-command-of-hdfs.md)。
+
+## Java API
+
+详见[HDFS的JAVA Api](./java-api-of-hdfs.md)。
