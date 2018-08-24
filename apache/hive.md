@@ -141,3 +141,7 @@ Hive会为每个创建的数据库在HDFS上创建一个目录，该数据库的
 ## 安装与配置
 
 详见[Ubuntu16.04环境下安装配置Hive2.3.3](./installing-hive2.3.3-on-ubuntu.md)
+
+## Shell操作
+
+详见[Hive的Shell基本操作](./shell-command-of-hive.md)

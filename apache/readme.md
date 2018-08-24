@@ -22,3 +22,4 @@
 - [HBase的Java Api](./java-api-of-hbase.md)
 - [Hadoop数据仓库工具：Hive](./hive.md)
 - [Ubuntu16.04环境下安装配置Hive2.3.3](./installing-hive2.3.3-on-ubuntu.md)
+- [Hive的Shell基本操作](./shell-command-of-hive.md)
