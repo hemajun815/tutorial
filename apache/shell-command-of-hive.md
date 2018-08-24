@@ -264,3 +264,9 @@ OK
 5
 Time taken: 20.314 seconds, Fetched: 1 row(s)
 ```
+
+**说明**
+
+Hive简单查询不启用MapReduce Job 而启用Fetch task，在YARN Applications看不到ApplicationID。
+
+启用MapReduce Job是会消耗系统开销的。对于这个问题，从Hive0.10.0版本开始，对于简单的不需要聚合的类似SELECT <col> from <table> LIMIT n语句，不需要启动MapReduce job，直接通过Fetch task获取数据。
