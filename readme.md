@@ -25,6 +25,7 @@ Original tutorials, share innocently, download free.
 - [HBase的Shell基本操作](./apache/shell-command-of-hbase.md)
 - [HBase的Java Api](./apache/java-api-of-hbase.md)
 - [Hadoop数据仓库工具：Hive](./apache/hive.md)
+- [Ubuntu16.04环境下安装配置Hive2.3.3](./apache/installing-hive2.3.3-on-ubuntu.md)
 
 ### c-cpp
 
