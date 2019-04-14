@@ -41,6 +41,7 @@ Original tutorials, share innocently, download free.
 - [二进制I/O](./c-cpp/binary-io.md)
 - [正则表达式](./c-cpp/regular_expression.md)
 - [typedef与\#define对比](./c-cpp/typedef_vs_define.md)
+- [并发、进程与线程初探](./c-cpp/exploration-of-concurrency-processes-and-threads.md)
 
 ### deep-learning
 
