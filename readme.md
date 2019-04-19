@@ -44,7 +44,8 @@ Original tutorials, share innocently, download free.
 - [并发、进程与线程初探](./c-cpp/exploration-of-concurrency-processes-and-threads.md)
 
 ### cmake
-- [Effective CMake (Daniel Pfeifer)](./cmake/effective_cmake.md)
+
+- [Effective CMake (Daniel Pfeifer)](./cmake/effective-cmake.md)
 
 ### deep-learning
 
