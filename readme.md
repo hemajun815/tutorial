@@ -80,6 +80,8 @@ Original tutorials, share innocently, download free.
 
 ### refactor
 
+- [提炼函数](./refactor/extract-method.md)
+
 ### sql
 
 - [删除数据库数据，清理自增字段](./sql/clean-data-source.md)
