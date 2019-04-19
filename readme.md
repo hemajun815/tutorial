@@ -81,6 +81,7 @@ Original tutorials, share innocently, download free.
 ### refactor
 
 - [提炼函数](./refactor/extract-method.md)
+- [以查询取代临时变量](./refactor/replace-temp-with-query.md)
 
 ### sql
 
