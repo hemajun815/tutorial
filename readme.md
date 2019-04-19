@@ -43,6 +43,9 @@ Original tutorials, share innocently, download free.
 - [typedef与\#define对比](./c-cpp/typedef_vs_define.md)
 - [并发、进程与线程初探](./c-cpp/exploration-of-concurrency-processes-and-threads.md)
 
+### cmake
+- [Effective CMake (Daniel Pfeifer)](./cmake/effective_cmake.md)
+
 ### deep-learning
 
 - [线性模型的局限性](./deep-learning/limitations-of-linear-models.md)
