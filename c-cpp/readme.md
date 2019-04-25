@@ -12,3 +12,4 @@
 - [正则表达式](./regular_expression.md)
 - [typedef与\#define对比](./typedef_vs_define.md)
 - [并发、进程与线程初探](./exploration-of-concurrency-processes-and-threads.md)
+- [泛型算法设计](./design-a-generic-algorithm.md)
